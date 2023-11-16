@@ -1,3 +1,10 @@
 {
-  "files": {}
+  "files": {
+    "opensafely-azithromycin-oral.csv": {
+      "id": "opensafely/azithromycin-oral/42faf594",
+      "url": "https://opencodelists.org/codelist/opensafely/azithromycin-oral/42faf594/",
+      "downloaded_at": "2023-11-16 09:05:48.100436Z",
+      "sha": "4a3660b385826dda2ee428b9cd64868e904a1ea6"
+    }
+  }
 }

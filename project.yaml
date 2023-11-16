@@ -6,7 +6,14 @@ expectations:
 
 actions:
   generate_dataset:
-    run: ehrql:v0 generate-dataset analysis/dataset_definition.py --output output/dataset.csv.gz
+    run: ehrql:v0 generate-dataset analysis/dataset_definition.py --output output/dataset.csv
     outputs:
       highly_sensitive:
-        dataset: output/dataset.csv.gz
+        dataset: output/dataset.csv
+
+  count:
+    needs: [generate_dataset]
+    run: python:latest analysis/count.py
+    outputs:
+      moderately_sensitive:
+        results: output/count.json

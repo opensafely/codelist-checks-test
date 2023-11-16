@@ -1,5 +1,5 @@
 from ehrql import Dataset
-from ehrql.tables.beta.tpp import patients, practice_registrations
+from ehrql.tables.beta.tpp import patients, practice_registrations, addresses
 
 dataset = Dataset()
 
@@ -9,6 +9,6 @@ has_registration = practice_registrations.for_patient_on(
     index_date
 ).exists_for_patient()
 
-dataset.age = patients.age_on(index_date)
+dataset.in_care_home = addresses.for_patient_on(index_date).care_home_is_potential_match
 
-dataset.define_population(has_registration & (dataset.age > 17))
+dataset.define_population(has_registration)
